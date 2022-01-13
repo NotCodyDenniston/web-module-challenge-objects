@@ -15,8 +15,12 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(food, num, time){
+    return{
+      name: food,
+      price: num,
+      category: time
+    }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -28,7 +32,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log('task 1', createMenuItem('pizza', 5, 'lunch'))
+console.log('task 1', createMenuItem('cereal', 5, 'breakfast'))
+console.log('task 1', createMenuItem('spaghetti', 5, 'dinner'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -47,9 +53,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
+
+
+  discount: function(personType){
+    if(personType === 'teacher' || personType === 'student'){
+      return this.price * .75
+    } else {
+      return this.price * .90
+    }
+  }
   
 }
-
+console.log('task 2', burger.discount('public'))
 
 
 ///////////////Reviews (MVP)///////////////////
