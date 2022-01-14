@@ -83,7 +83,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log('task 3', reviews[5].feedback)
 
 
 
@@ -93,7 +93,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
+console.log('task 4', reviews[7].feedback)
 
 
 
@@ -106,9 +107,20 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(array){
+  const pushedArray = []
+   for(i = 0; i < array.length; i++){
+
+     const person = {
+       name: array[i].name,
+       rating: array[i].rating,
+       review: array[i].feedback
+      }
+      pushedArray.push(person)
+    }
+  return pushedArray
 }
+console.log(addReview(reviews))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -121,12 +133,13 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+  let person = array[index]
+  return console.log(`${person.name} gave the restaurant a ${person.rating} star review, and their feedback was:${person.feedback}`)
 }
 
 
-  
+  getReviewByIndex(reviews, 2)
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
